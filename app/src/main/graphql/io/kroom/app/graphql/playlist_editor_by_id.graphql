@@ -1,0 +1,28 @@
+query PlayListEditorByIdQuery($id: Int!) {
+    PlayListEditorById(id: $id) {
+        playListEditor {
+            id
+            tracks {
+                id
+                title
+                artist {
+                    id
+                    name
+                }
+                album {
+                    cover
+                    title
+                }
+            }
+            invitedUsers {
+                id
+                userName
+                email
+            }
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

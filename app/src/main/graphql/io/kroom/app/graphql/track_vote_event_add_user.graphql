@@ -1,0 +1,17 @@
+mutation TrackVoteEventAddUserMutation($eventId: Int!, $userId: Int!) {
+    TrackVoteEventAddUser(eventId: $eventId, userId: $userId) {
+        trackVoteEvent {
+            id
+            name
+            userInvited {
+                userName
+                id
+                email
+            }
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

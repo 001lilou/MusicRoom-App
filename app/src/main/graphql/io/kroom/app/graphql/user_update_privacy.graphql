@@ -1,0 +1,29 @@
+mutation UserUpdatePrivacyMutation(
+    $userId: Int!
+    $email: PrivacyEnum!
+    $location: PrivacyEnum!
+    $friends: PrivacyEnum!
+    $musicalPreferencesGenre: PrivacyEnum!
+) {
+    UserUpdatePrivacy(
+        userId: $userId
+        email: $email
+        location: $location
+        friends: $friends
+        musicalPreferencesGenre: $musicalPreferencesGenre
+    ) {
+        user {
+            id
+            privacy {
+                email
+                friends
+                location
+                musicalPreferencesGenre
+            }
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/bottomNavigationTrackVoteEvent"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Event" />
+
+    <item
+            android:id="@+id/bottomNavigationPlayListEditor"
+            android:icon="@drawable/ic_music_note_black_24dp"
+            android:title="Playlist" />
+
+    <item
+            android:id="@+id/bottomNavigationUser"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="User" />
+
+</menu>

@@ -1,0 +1,50 @@
+query TrackVoteEventByIdQuery($id: Int!) {
+    TrackVoteEventById(id: $id) {
+        trackVoteEvent {
+            id
+            userMaster {
+                userName
+            }
+            name
+            public
+            locAndSchRestriction
+            currentTrack {
+                id
+                title
+                album {
+                    coverSmall
+                    coverMedium
+                }
+            }
+            trackWithVote {
+                track {
+                    id
+                    album {
+                        coverSmall
+                    }
+                    title
+                    artist {
+                        id
+                        name
+                    }
+                }
+                score
+                nb_vote_up
+                nb_vote_down
+            }
+            scheduleBegin
+            scheduleEnd
+            latitude
+            longitude
+            userInvited {
+                id
+                userName
+                email
+            }
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

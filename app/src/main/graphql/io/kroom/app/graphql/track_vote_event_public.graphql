@@ -1,0 +1,18 @@
+query TrackVoteEventsPublicQuery{
+    TrackVoteEventsPublic {
+        id
+        userMaster {
+            id
+            userName
+        }
+        name
+        public
+        scheduleBegin
+        scheduleEnd
+        latitude
+        longitude
+
+    }
+
+}
+

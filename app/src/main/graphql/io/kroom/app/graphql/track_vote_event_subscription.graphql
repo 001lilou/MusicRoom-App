@@ -1,0 +1,52 @@
+subscription TrackVoteEventByIdSubscription($id: Int!){
+    TrackVoteEventById(id: $id) {
+        trackVoteEvent {
+            id
+            userMaster {
+                userName
+                id
+            }
+            name
+            public
+            locAndSchRestriction
+            currentTrack {
+                id
+                title
+                album {
+                    coverSmall
+                    coverMedium
+                }
+            }
+            trackWithVote {
+                track {
+                    id
+                    album {
+                        coverSmall
+                        coverMedium
+                    }
+                    title
+                    artist {
+                        id
+                        name
+                    }
+                }
+                score
+                nb_vote_up
+                nb_vote_down
+            }
+            scheduleBegin
+            scheduleEnd
+            latitude
+            longitude
+            userInvited {
+                id
+                userName
+                email
+            }
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

@@ -1,0 +1,12 @@
+mutation PlayListEditorDelTrackMutation($playListId: Int!, $trackId: Int!) {
+    PlayListEditorDelTrack(playListId: $playListId, trackId: $trackId) {
+        playListEditor {
+            id
+            name
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

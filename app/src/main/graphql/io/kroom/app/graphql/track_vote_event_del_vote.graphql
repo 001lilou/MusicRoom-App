@@ -1,0 +1,39 @@
+mutation TrackVoteEventDelVoteMutation(
+    $eventId: Int!
+    $userId: Int!
+    $musicId: Int!
+) {
+    TrackVoteEventDelVote(
+        eventId: $eventId
+        userId: $userId
+        musicId: $musicId
+    ) {
+        trackVoteEvent {
+            id
+            userMaster {
+                id
+            }
+            name
+            public
+            currentTrack {
+                id
+            }
+            trackWithVote {
+                track {
+                    id
+                }
+            }
+            scheduleBegin
+            scheduleEnd
+            latitude
+            longitude
+            userInvited {
+                id
+            }
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

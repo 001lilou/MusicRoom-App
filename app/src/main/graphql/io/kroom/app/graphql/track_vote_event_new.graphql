@@ -1,0 +1,30 @@
+mutation TrackVoteEventNewMutation(
+    $userIdMaster: Int!
+    $name: String!
+    $open: Boolean!
+    $locAndSchRestriction: Boolean!
+    $scheduleBegin: String!
+    $scheduleEnd: String!
+    $latitude: Float!
+    $longitude: Float!
+) {
+    TrackVoteEventNew(
+        userIdMaster: $userIdMaster
+        name: $name
+        public: $open
+        locAndSchRestriction: $locAndSchRestriction
+        scheduleBegin: $scheduleBegin
+        scheduleEnd: $scheduleEnd
+        latitude: $latitude
+        longitude: $longitude
+    ) {
+        trackVoteEvent {
+            id
+            name
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

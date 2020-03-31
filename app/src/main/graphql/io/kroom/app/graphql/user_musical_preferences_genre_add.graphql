@@ -1,0 +1,14 @@
+mutation UserAddMusicalPreference($genreId: Int!, $userId: Int!) {
+    UserAddMusicalPreference(genreId: $genreId userId: $userId) {
+        errors {
+            field
+            messages
+        }
+        user {
+            musicalPreferences {
+                id
+                name
+            }
+        }
+    }
+}

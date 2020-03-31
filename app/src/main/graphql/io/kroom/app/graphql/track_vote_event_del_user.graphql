@@ -1,0 +1,17 @@
+mutation TrackVoteEventDelUserMutation($eventId: Int!, $userId: Int!) {
+    TrackVoteEventDelUser(eventId: $eventId, userId: $userId) {
+        trackVoteEvent {
+            id
+            name
+            userInvited {
+                userName
+                id
+                email
+            }
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

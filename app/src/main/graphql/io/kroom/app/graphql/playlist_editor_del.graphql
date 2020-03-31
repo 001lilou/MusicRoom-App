@@ -1,0 +1,8 @@
+mutation PlayListEditorDelMutation($id: Int!) {
+    PlayListEditorDel(id: $id) {
+        errors {
+            field
+            messages
+        }
+    }
+}

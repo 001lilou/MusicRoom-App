@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">kroom-app</string>
+
+
+    <!-- user_sign_up -->
+    <string name="sign_up">Sign up</string>
+    <string name="user_name_sign_up">username</string>
+    <string name="password_sign_up">password</string>
+    <string name="email_sign_up">Email</string>
+    <string name="sign_in_to_kroom">Sign in to kroom</string>
+
+
+    <!-- user_sign_in -->
+    <string name="sign_in">Sign In</string>
+    <string name="user_name_sign_in">username</string>
+    <string name="password_sign_in">password</string>
+    <string name="signup_to_kroom">Signup to Kroom</string>
+
+
+    <!-- log_google -->
+    <string name="google_login">Google Login</string>
+    <string name="google_logout">Google Logout</string>
+    <string name="is_loged_in">Is Loged in</string>
+    <string name="get_curret_idp_type">Get Curret IDP Type</string>
+    <string name="get_access_token">Get Access Token</string>
+    <string name="get_email">Get Email</string>
+    <string name="start_connexion">CONNEXION</string>
+    <string name="start_inscription">INSCRIPTION</string>
+    <string name="google">Google</string>
+    <string name="todo">TODO</string>
+    <string name="misspassword">forgot password ?</string>
+    <string name="ou">OU</string>
+    <string name="email_adress">Email address</string>
+    <string name="send_email">Send email</string>
+
+
+    <!-- choser -->
+    <string name="music_control_delegation">Music Control Delegation</string>
+    <string name="music_track_vote">Music Track Vote</string>
+    <string name="music_playlist_editor">Music Playlist Editor</string>
+
+
+    <!-- row_item_music_track_vote-->
+    <string name="track_vote_artist">Artist</string>
+    <string name="track_vote_cover_small"></string>
+    <string name="music_track_vote_up">Vote  Up</string>
+    <string name="music_track_vote_down">Vote Down</string>
+    <string name="track_vote_title">Title</string>
+    <string name="music_track_vote_duration">00 : 00</string>
+    <string name="list_music_track_vote">list_music_track_vote</string>
+
+    <!-- row_item_music_track_vote-events-->
+    <string name="event_user_master">User Master</string>
+    <string name="event_name">Event Name</string>
+    <string name="event_schedule">19/06/2019</string>
+    <string name="event_location">Location</string>
+    <string name="event_switch">Subcribe</string>
+    <string name="new_event_name">Name</string>
+    <string name="new_event_public_Private">public</string>
+    <string name="create_an_event">Create an Event</string>
+    <string name="add_new_event">Add New Event</string>
+    <string name="new_event_public_private">public</string>
+    <string name="event_tab_public">public</string>
+    <string name="event_tab_private">private</string>
+    <string name="event_tab_add">add</string>
+
+    <!-- row_item_music_track_vote-->
+    <string name="cover_container">coverContainer</string>
+    <string name="add_existing_playlist">Add Existing Playlist</string>
+    <string name="public_music_track_vote_editor">Public</string>
+    <string name="private_music_track_vote_editor">Private</string>
+    <string name="add_music_track_vote_editor">Add</string>
+    <string name="search_track_vote">search</string>
+    <string name="music_track_vote_add">add</string>
+    <string name="infoTrackSearch">Artist name or track title</string>
+    <string name="musicTrackVoteVideo"></string>
+    <string name="music_track_vote_del">Vote del</string>
+    <string name="add_new_track">Add new track</string>
+    <string name="music_track_vote_score">score</string>
+    <string name="duration">Duration</string>
+    <string name="score">Score</string>
+    <string-array name="array_privacy">
+        <item>Private</item>
+        <item>Friends</item>
+        <item>Public</item>
+    </string-array>
+
+</resources>

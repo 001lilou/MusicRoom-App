@@ -1,0 +1,19 @@
+query PlayListEditorsPublicQuery {
+    PlayListEditorsPublic {
+        id
+        userMaster {
+            id
+            userName
+        }
+        name
+        tracks {
+            id
+            title
+        }
+        invitedUsers {
+            id
+            userName
+        }
+        public
+    }
+}

@@ -1,0 +1,14 @@
+mutation UserSignUpMutation($userName: String!, $email: String!, $pass: String!) {
+    UserSignUp(userName: $userName email: $email pass: $pass) {
+        user {
+            id
+            token
+            email
+            userName
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

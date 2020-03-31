@@ -1,0 +1,49 @@
+mutation TrackVoteEventNextTrackMutation($id: Int!) {
+    TrackVoteEventNextTrack(eventId: $id) {
+        trackVoteEvent {
+            id
+            userMaster {
+                userName
+            }
+            name
+            public
+            locAndSchRestriction
+            currentTrack {
+                id
+                title
+                album {
+                    coverSmall
+                }
+            }
+            trackWithVote {
+                track {
+                    id
+                    album {
+                        coverSmall
+                    }
+                    title
+                    artist {
+                        id
+                        name
+                    }
+                }
+                score
+                nb_vote_up
+                nb_vote_down
+            }
+            scheduleBegin
+            scheduleEnd
+            latitude
+            longitude
+            userInvited {
+                id
+                userName
+                email
+            }
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

@@ -1,0 +1,25 @@
+query TrackVoteEventByUserIdQuery($userId: Int!){
+    TrackVoteEventByUserId( userId: $userId)
+    {
+        trackVoteEvents{
+            id
+            userMaster {
+                id
+                userName
+            }
+            name
+            public
+            scheduleBegin
+            scheduleEnd
+            latitude
+            longitude
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}
+
+
+

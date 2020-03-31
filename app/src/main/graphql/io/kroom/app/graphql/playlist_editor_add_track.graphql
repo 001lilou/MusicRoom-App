@@ -1,0 +1,12 @@
+mutation PlayListEditorAddTrackMutation($playListId: Int!, $trackId: Int!) {
+    PlayListEditorAddTrack(playListId: $playListId, trackId: $trackId) {
+        errors {
+            field
+            messages
+        }
+        playListEditor {
+            id
+            name
+        }
+    }
+}

@@ -1,0 +1,16 @@
+mutation PlayListEditorNewMutation(
+    $userMasterId: Int!
+    $name: String!
+    $publc: Boolean!
+) {
+    PlayListEditorNew(userMasterId: $userMasterId, name: $name, public: $publc) {
+        playListEditor {
+            id
+            name
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

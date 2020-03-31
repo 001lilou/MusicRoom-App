@@ -1,0 +1,41 @@
+mutation TrackVoteEventAddOrUpdateVoteMutation(
+    $eventId: Int!
+    $userId: Int!
+    $musicId: Int!
+    $up: Boolean!
+) {
+    TrackVoteEventAddOrUpdateVote(
+        eventId: $eventId
+        userId: $userId
+        musicId: $musicId
+        up: $up
+    ) {
+        trackVoteEvent {
+            id
+            userMaster {
+                id
+            }
+            name
+            public
+            currentTrack {
+                id
+            }
+            trackWithVote {
+                track {
+                    id
+                }
+            }
+            scheduleBegin
+            scheduleEnd
+            latitude
+            longitude
+            userInvited {
+                id
+            }
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

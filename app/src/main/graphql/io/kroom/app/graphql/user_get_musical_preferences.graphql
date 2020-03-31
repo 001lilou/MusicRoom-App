@@ -1,0 +1,14 @@
+query UserGetMusicalPreferences($id: Int!) {
+    UserGetById(id: $id) {
+        errors {
+            field
+            messages
+        }
+        user {
+            musicalPreferences {
+                id
+                name
+            }
+        }
+    }
+}

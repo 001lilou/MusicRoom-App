@@ -1,0 +1,31 @@
+mutation UserDeleteFriend($friendId: Int!, $userId: Int!) {
+    UserDelFriend(friendId: $friendId userId: $userId) {
+        user {
+            id
+            email
+            userName
+            friends {
+                email
+                friends {
+                    email
+                    id
+                    userName
+                }
+                id
+                userName
+                latitude
+                longitude
+                musicalPreferences {
+                    pictureBig
+                    id
+                    name
+                    pictureMedium
+                }
+            }
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

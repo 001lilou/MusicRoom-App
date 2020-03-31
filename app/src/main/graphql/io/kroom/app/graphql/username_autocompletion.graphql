@@ -1,0 +1,6 @@
+query UserNameAutocompletion($prefix: String!) {
+    UserNameAutocompletion(prefix: $prefix) {
+        userName
+        id
+    }
+}

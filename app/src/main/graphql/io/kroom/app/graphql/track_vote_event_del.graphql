@@ -1,0 +1,8 @@
+mutation TrackVoteEventDelMutation($id: Int!){
+    TrackVoteEventDel(id: $id) {
+        errors {
+            field
+            messages
+        }
+    }
+}

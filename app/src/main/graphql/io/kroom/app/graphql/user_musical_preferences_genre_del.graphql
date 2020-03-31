@@ -1,0 +1,14 @@
+mutation UserDelMusicalPreference($genreId: Int!, $userId: Int!) {
+    UserDelMusicalPreference(genreId: $genreId userId: $userId) {
+        errors {
+            field
+            messages
+        }
+        user {
+            musicalPreferences {
+                id
+                name
+            }
+        }
+    }
+}

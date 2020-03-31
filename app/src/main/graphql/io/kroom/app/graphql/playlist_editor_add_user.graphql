@@ -1,0 +1,16 @@
+mutation PlayListEditorAddUserMutation($playlistId: Int!, $userId: Int!) {
+    PlayListEditorAddUser(playlistId: $playlistId, userId: $userId) {
+        playListEditor {
+            id
+            invitedUsers {
+                id
+                userName
+                email
+            }
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

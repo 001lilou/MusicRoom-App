@@ -1,0 +1,16 @@
+mutation PlayListEditorMoveTrackMutation(
+    $playListId: Int!
+    $trackId: Int!
+    $up: Boolean!
+) {
+    PlayListEditorMoveTrack(playListId: $playListId, trackId: $trackId, up: $up) {
+        playListEditor {
+            id
+            name
+        }
+        errors {
+            field
+            messages
+        }
+    }
+}

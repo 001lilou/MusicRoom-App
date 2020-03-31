@@ -1,0 +1,45 @@
+query UserByIdQuery($id: Int!) {
+    UserGetById(id: $id) {
+        errors {
+            field
+            messages
+        }
+        user {
+            email
+            id
+            userName
+            latitude
+            longitude
+            privacy {
+                email
+                location
+                friends
+                musicalPreferencesGenre
+            }
+            musicalPreferences {
+                pictureBig
+                id
+                name
+                pictureMedium
+            }
+            friends {
+                email
+                friends {
+                    email
+                    id
+                    userName
+                }
+                id
+                userName
+                latitude
+                longitude
+                musicalPreferences {
+                    pictureBig
+                    id
+                    name
+                    pictureMedium
+                }
+            }
+        }
+    }
+}

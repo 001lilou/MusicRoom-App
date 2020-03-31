@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/playlistEditorMenuTrack"
+            android:title="Tracks"
+            android:visible="true"/>
+    <item
+            android:id="@+id/playlistEditorMenuUser"
+            android:title="Users"
+            android:visible="true"/>
+    <item
+            android:id="@+id/playlistEditorMenuDelete"
+            android:title="Delete"
+            android:visible="true"/>
+
+</menu>

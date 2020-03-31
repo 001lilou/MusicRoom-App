@@ -1,0 +1,441 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+    subscription: Subscription
+}
+
+"Album description."
+type Album {
+    artist: Artist!
+    artistId: Int!
+    available: Boolean!
+    contributors: [Artist!]!
+    cover: String!
+    coverBig: String!
+    coverMedium: String!
+    coverSmall: String!
+    coverXl: String!
+    duration: Int!
+    explicitContentCover: Int!
+    explicitContentLyrics: Int!
+    explicitLyrics: Boolean!
+    fans: Int!
+    genre: Genre
+    genreId: Int!
+    id: Int!
+    label: String!
+    link: String!
+    nbTracks: Int!
+    rating: Int!
+    recordType: String!
+    releaseDate: String!
+    title: String!
+    tracklist: String!
+    tracks: [Track!]!
+}
+
+"AlbumFieldPayload description."
+type AlbumFieldPayload {
+    album: Album
+    errors: [Error!]!
+}
+
+"Artist description."
+type Artist {
+    id: Int!
+    link: String!
+    name: String!
+    nbAlbum: Int!
+    nbFan: Int!
+    picture: String!
+    pictureBig: String!
+    pictureMedium: String!
+    pictureSmall: String!
+    pictureXl: String!
+    share: String!
+    tracklist: String!
+}
+
+"ArtistFieldPayload description."
+type ArtistFieldPayload {
+    artist: Artist
+    errors: [Error!]!
+}
+
+"Error description."
+type Error {
+    field: String!
+    messages: [String!]!
+}
+
+"Genre description."
+type Genre {
+    id: Int!
+    name: String!
+    picture: String!
+    pictureBig: String!
+    pictureMedium: String!
+    pictureSmall: String!
+    pictureXl: String!
+}
+
+"GenreFieldPayload description."
+type GenreFieldPayload {
+    errors: [Error!]!
+    genre: Genre
+}
+
+type Mutation {
+    PlayListEditorAddTrack(playListId: Int!, trackId: Int!): PlayListEditorAddTrackPayload!
+    PlayListEditorDel(id: Int!): PlayListEditorDelPayload!
+    PlayListEditorDelTrack(playListId: Int!, trackId: Int!): PlayListEditorDelTrackPayload!
+    PlayListEditorMoveTrack(playListId: Int!, trackId: Int!, up: Boolean!): PlayListEditorMoveTrackPayload!
+    PlayListEditorNew(name: String!, public: Boolean!, userMasterId: Int!): PlayListEditorNewPayload!
+    TrackVoteEventAddOrUpdateVote(eventId: Int!, musicId: Int!, up: Boolean!, userId: Int!): TrackVoteEventAddVotePayload!
+    TrackVoteEventAddUser(eventId: Int!, userId: Int!): TrackVoteEventAddUserPayload!
+    TrackVoteEventDel(id: Int!): TrackVoteEventDelPayload!
+    TrackVoteEventDelUser(eventId: Int!, userId: Int!): TrackVoteEventDelUserPayload!
+    TrackVoteEventDelVote(eventId: Int!, musicId: Int!, userId: Int!): TrackVoteEventDelVotePayload!
+    TrackVoteEventNew(name: String!, public: Boolean!, userIdMaster: Int!): TrackVoteEventNewPayload!
+    TrackVoteEventUpdate(eventId: Int!, latitude: Float, locAndSchRestriction: Boolean!, longitude: Float, name: String!, public: Boolean!, scheduleBegin: Long, scheduleEnd: Long, userIdMaster: Int!): TrackVoteEventUpdatePayload!
+    UserAddFriend(friendId: Int!, userId: Int!): UserAddFriendPayload!
+    UserAddMusicalPreference(genreId: Int!, userId: Int!): UserAddMusicalPreferencePayload!
+    UserDelFriend(friendId: Int!, userId: Int!): UserDelFriendPayload!
+    UserDelMusicalPreference(genreId: Int!, userId: Int!): UserDelMusicalPreferencePayload!
+    UserSignIn(pass: String!, userName: String!): UserSignInPayload!
+    UserSignUp(email: String!, pass: String!, userName: String!): UserSignUpPayload!
+    UserSignWithGoogle(token: String!): UserSignInPayload!
+    UserUpdateLocation(latitude: Float!, longitude: Float!, userId: Int!): UserUpdateLocationPayload!
+    UserUpdatePassword(newPassword: String!, userId: Int!): UserUpdatePasswordPayload!
+    UserUpdatePrivacy(email: PrivacyEnum!, friends: PrivacyEnum!, location: PrivacyEnum!, musicalPreferencesGenre: PrivacyEnum!, userId: Int!): UserUpdatePrivacyPayload!
+}
+
+"PlayListEditorAddTrackPayload description."
+type PlayListEditorAddTrackPayload {
+    errors: [Error!]!
+    playListEditor: PlaylistEditor
+}
+
+"PlayListEditorByIdPayload description."
+type PlayListEditorByIdPayload {
+    errors: [Error!]!
+    playListEditor: PlaylistEditor
+}
+
+"PlayListEditorByUserIdPayload description."
+type PlayListEditorByUserIdPayload {
+    errors: [Error!]!
+    playListEditor: [PlaylistEditor!]
+}
+
+"PlayListEditorDelPayload description."
+type PlayListEditorDelPayload {
+    errors: [Error!]!
+}
+
+"PlayListEditorDelTrackPayload description."
+type PlayListEditorDelTrackPayload {
+    errors: [Error!]!
+    playListEditor: PlaylistEditor
+}
+
+"PlayListEditorMoveTrackPayload description."
+type PlayListEditorMoveTrackPayload {
+    errors: [Error!]!
+    playListEditor: PlaylistEditor
+}
+
+"PlayListEditorNewPayload description."
+type PlayListEditorNewPayload {
+    errors: [Error!]!
+    playListEditor: PlaylistEditor
+}
+
+"PlaylistEditor description."
+type PlaylistEditor {
+    id: Int!
+    invitedUsers: [User!]
+    name: String!
+    public: Boolean!
+    tracks: [Track!]
+    userMaster: User
+}
+
+"Privacy description."
+type Privacy {
+    email: PrivacyEnum!
+    friends: PrivacyEnum!
+    location: PrivacyEnum!
+    musicalPreferencesGenre: PrivacyEnum!
+}
+
+type Query {
+    DeezerAlbum(id: Int!): AlbumFieldPayload!
+    DeezerArtist(id: Int!): ArtistFieldPayload!
+    DeezerGenre(id: Int!): GenreFieldPayload!
+    DeezerSearch(connections: Connection, order: Order, search: String!, strict: Boolean!): SearchFieldsPayload!
+    DeezerTrack(id: Int!): TrackFieldPayload!
+    PlayListEditorById(id: Int!): PlayListEditorByIdPayload!
+    "Return all PlayListEditor where User are invited."
+    PlayListEditorByUserId(userId: Int!): PlayListEditorByUserIdPayload!
+    "Return all PlayListEditor public."
+    PlayListEditorsPublic: [PlaylistEditor!]!
+    TrackVoteEventById(id: Int!): TrackVoteEventByIdPayload!
+    "Return all TrackVoteEvent where User are invited."
+    TrackVoteEventByUserId(userId: Int!): TrackVoteEventByUserIdPayload!
+    "Return all TrackVoteEvent public."
+    TrackVoteEventsPublic: [TrackVoteEvent!]!
+    UserGetById(id: Int!): UserGetByIdPayload!
+    UserNameAutocompletion(prefix: String!): [User!]!
+}
+
+"Search description."
+type Search {
+    album: Album
+    artist: Artist
+    duration: Int!
+    explicitLyrics: Boolean!
+    id: Int!
+    link: String!
+    preview: String!
+    rank: Int!
+    readable: Boolean!
+    title: String!
+    titleShort: String!
+}
+
+"SearchFieldsPayload description."
+type SearchFieldsPayload {
+    errors: [Error!]!
+    search: [Search!]
+}
+
+type Subscription {
+    PlayListEditorById(id: Int!): PlayListEditorByIdPayload!
+    TrackVoteEventById(id: Int!): TrackVoteEventByIdPayload!
+}
+
+"Track description."
+type Track {
+    album: Album
+    albumId: Int!
+    artist: Artist
+    artistId: Int!
+    availableCountries: [String!]!
+    bpm: Float!
+    contributors: [Artist!]!
+    diskNumber: Int!
+    duration: Int!
+    explicitContentCover: Int!
+    explicitContentLyrics: Int!
+    explicitLyrics: Boolean!
+    gain: Float!
+    id: Int!
+    isrc: String!
+    link: String!
+    preview: String!
+    rank: Int!
+    readable: Boolean!
+    releaseDate: String!
+    share: String!
+    title: String!
+    titleShort: String!
+    trackPosition: Int!
+}
+
+"TrackFieldPayload description."
+type TrackFieldPayload {
+    errors: [Error!]!
+    track: Track
+}
+
+"TrackVoteEvent description."
+type TrackVoteEvent {
+    currentTrack: Track
+    id: Int!
+    latitude: Float
+    locAndSchRestriction: Boolean!
+    longitude: Float
+    name: String!
+    public: Boolean!
+    scheduleBegin: Long
+    scheduleEnd: Long
+    trackWithVote: [TrackWithVote!]
+    userInvited: [User!]
+    userMaster: User
+}
+
+"TrackVoteEventAddUserPayload description."
+type TrackVoteEventAddUserPayload {
+    errors: [Error!]!
+    trackVoteEvent: TrackVoteEvent
+}
+
+"TrackVoteEventAddVotePayload description."
+type TrackVoteEventAddVotePayload {
+    errors: [Error!]!
+    trackVoteEvent: TrackVoteEvent
+}
+
+"TrackVoteEventByIdPayload description."
+type TrackVoteEventByIdPayload {
+    errors: [Error!]!
+    trackVoteEvent: TrackVoteEvent
+}
+
+"TrackVoteEventByUserIdPayload description."
+type TrackVoteEventByUserIdPayload {
+    errors: [Error!]!
+    trackVoteEvents: [TrackVoteEvent!]
+}
+
+"TrackVoteEventDelPayload description."
+type TrackVoteEventDelPayload {
+    errors: [Error!]!
+}
+
+"TrackVoteEventDelUserPayload description."
+type TrackVoteEventDelUserPayload {
+    errors: [Error!]!
+    trackVoteEvent: TrackVoteEvent
+}
+
+"TrackVoteEventDelVotePayload description."
+type TrackVoteEventDelVotePayload {
+    errors: [Error!]!
+    trackVoteEvent: TrackVoteEvent
+}
+
+"TrackVoteEventNewPayload description."
+type TrackVoteEventNewPayload {
+    errors: [Error!]!
+    trackVoteEvent: TrackVoteEvent
+}
+
+"TrackVoteEventUpdatePayload description."
+type TrackVoteEventUpdatePayload {
+    errors: [Error!]!
+    trackVoteEvent: TrackVoteEvent
+}
+
+"TrackWithVote description."
+type TrackWithVote {
+    nb_vote_down: Int!
+    nb_vote_up: Int!
+    score: Int!
+    track: Track!
+}
+
+"User description."
+type User {
+    email: String
+    friends: [User!]
+    id: Int
+    latitude: Float
+    longitude: Float
+    musicalPreferences: [Genre!]
+    permissionGroup: [String!]
+    privacy: Privacy
+    token: String
+    userName: String!
+}
+
+"UserAddFriendPayload description."
+type UserAddFriendPayload {
+    errors: [Error!]!
+    user: User
+}
+
+"UserAddMusicalPreferencePayload description."
+type UserAddMusicalPreferencePayload {
+    errors: [Error!]!
+    user: User
+}
+
+"UserDelFriendPayload description."
+type UserDelFriendPayload {
+    errors: [Error!]!
+    user: User
+}
+
+"UserDelMusicalPreferencePayload description."
+type UserDelMusicalPreferencePayload {
+    errors: [Error!]!
+    user: User
+}
+
+"UserGetByIdPayload description."
+type UserGetByIdPayload {
+    errors: [Error!]!
+    user: User
+}
+
+"UserSignInPayload description."
+type UserSignInPayload {
+    errors: [Error!]!
+    user: User
+}
+
+"UserSignUpPayload description."
+type UserSignUpPayload {
+    errors: [Error!]!
+    user: User
+}
+
+"UserUpdateLocationPayload description."
+type UserUpdateLocationPayload {
+    errors: [Error!]!
+    user: User
+}
+
+"UserUpdatePasswordPayload description."
+type UserUpdatePasswordPayload {
+    errors: [Error!]!
+    user: User
+}
+
+"UserUpdatePrivacyPayload description."
+type UserUpdatePrivacyPayload {
+    errors: [Error!]!
+    user: User
+}
+
+"exemple: search/album"
+enum Connection {
+    ALBUM
+    ARTIST
+    HISTORY
+    PLAYLIST
+    PODCAST
+    RADIO
+    TRACK
+    USER
+}
+
+"Sort Order"
+enum Order {
+    ALBUM_ASC
+    ALBUM_DESC
+    ARTIST_ASC
+    ARTIST_DESC
+    DURATION_ASC
+    DURATION_DESC
+    RANKING
+    RATING_ASC
+    RATING_DESC
+    TRACK_ASC
+    TRACK_DESC
+}
+
+"PrivacyEnum"
+enum PrivacyEnum {
+    FRIENDS
+    PRIVATE
+    PUBLIC
+}
+
+
+"The `Long` scalar type represents non-fractional signed whole numeric values. Long can represent values between -(2^63) and 2^63 - 1."
+scalar Long
