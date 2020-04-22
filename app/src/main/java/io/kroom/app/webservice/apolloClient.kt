@@ -10,8 +10,8 @@ import okhttp3.Response
 import java.util.concurrent.TimeUnit
 
 // /!\ socket need port as well
-private const val baseUrl = " http://192.168.43.37:8080/graphql"
-private const val subscriptionBaseUrl = "ws://192.168.43.37:8080/graphql"
+private const val baseUrl = "http://104.154.212.243:8080/graphql"
+private const val subscriptionBaseUrl = "ws://104.154.212.243:8080/graphql"
 
 class GraphClient(private val getToken: () -> String?) {
 
